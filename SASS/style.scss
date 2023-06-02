@@ -8,6 +8,15 @@ $new-text: #008766;
 $grey: #353535;
 $background: #f7f7f7;
 
+@mixin displayCenter {
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin center {
+    margin: 0 auto;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -20,7 +29,6 @@ body {
     font-weight: 500;
     background: $background;
     overflow: hidden;
-
     animation: restoreOverflow 0s ease-in 3s;
     animation-fill-mode: forwards;
 }
@@ -32,13 +40,13 @@ body {
     @media (min-width: 1024px) {
         max-width: 1000px;
         width: 100%;
-        margin: 0 auto;
+        @include center;
     }
 
     @media (min-width: 1230px) {
         max-width: 1080px;
         width: 100%;
-        margin: 0 auto;
+        @include center;
     }
 }
 
@@ -59,7 +67,7 @@ a {
     text-align: center;
     display: block;
     width: 186px;
-    margin: 0 auto;
+    @include center;
 
     &:hover {
         background: linear-gradient(
@@ -83,12 +91,10 @@ a {
     width: 100%;
     background-color: rgba(255, 255, 255, 0.8);
     display: flex;
-    align-items: center;
-    justify-content: center;
+    @include displayCenter;
     position: absolute;
     z-index: 1;
     overflow: hidden;
-
     animation: hideAnimation 0s ease-in 3s;
     animation-fill-mode: forwards;
 
@@ -167,8 +173,7 @@ a {
 
     &-group {
         display: flex;
-        align-items: center;
-        justify-content: center;
+        @include displayCenter;
     }
 
     &__location {
@@ -230,12 +235,11 @@ a {
 .card__number {
     display: flex;
     background-color: $primary;
-    align-items: center;
+    @include displayCenter;
     width: 24px;
     height: 24px;
     border-radius: 50%;
     font-size: 14px;
-    justify-content: center;
     position: absolute;
     left: -12px;
     color: white;
@@ -390,8 +394,7 @@ a {
     width: 80px;
     height: 29px;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    @include displayCenter;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
     position: absolute;
     right: 15px;
@@ -532,7 +535,7 @@ a {
 
     & > .header > .logo {
         @media (min-width: 375px) {
-            margin: 0 auto;
+            @include center;
         }
     }
 }
@@ -638,7 +641,7 @@ a {
     &__global {
         @media (min-width: 1025px) {
             max-width: 635px;
-            margin: 0 auto;
+            @include center;
         }
     }
 
