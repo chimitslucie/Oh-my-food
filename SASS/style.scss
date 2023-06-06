@@ -527,6 +527,7 @@ a {
 .internal__page {
     position: relative;
     background-color: white;
+    overflow: scroll;
 
     & > .header {
         display: flex;
