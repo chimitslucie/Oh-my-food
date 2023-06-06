@@ -11,6 +11,8 @@ body {
   font-family: "Roboto", sans-serif;
   font-weight: 500;
   background: #f7f7f7;
+}
+body:not(.internal__page) {
   overflow: hidden;
   animation: restoreOverflow 0s ease-in 3s;
   animation-fill-mode: forwards;
@@ -195,11 +197,11 @@ a {
   display: flex;
   background-color: #9356dc;
   align-items: center;
+  justify-content: center;
   width: 24px;
   height: 24px;
   border-radius: 50%;
   font-size: 14px;
-  justify-content: center;
   position: absolute;
   left: -12px;
   color: white;

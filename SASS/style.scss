@@ -28,9 +28,12 @@ body {
     font-family: "Roboto", sans-serif;
     font-weight: 500;
     background: $background;
-    overflow: hidden;
-    animation: restoreOverflow 0s ease-in 3s;
-    animation-fill-mode: forwards;
+
+    &:not(.internal__page) {
+        overflow: hidden;
+        animation: restoreOverflow 0s ease-in 3s;
+        animation-fill-mode: forwards;
+    }
 }
 
 .container {
@@ -527,7 +530,6 @@ a {
 .internal__page {
     position: relative;
     background-color: white;
-    overflow: scroll;
 
     & > .header {
         display: flex;
@@ -699,7 +701,9 @@ a {
         }
     }
 
-    &__starter, &__dish, &__dessert {
+    &__starter,
+    &__dish,
+    &__dessert {
         margin: 40px 13px 0 13px;
 
         @media (min-width: 425px) {
